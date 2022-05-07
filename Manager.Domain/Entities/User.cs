@@ -4,6 +4,7 @@ using Manager.Domain.Validators;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Manager.Core.Exceptions;
 
 namespace Manager.Domain.Entities
 {
@@ -54,7 +55,7 @@ namespace Manager.Domain.Entities
                 foreach (var error in validation.Errors)
                     _errors.Add(error.ErrorMessage);
 
-                throw new Exception("Some information are invalid, please inform valid data" + _errors[0]);
+                throw new DomainException("Some information are invalid, please inform valid data", _errors);
             }
 
             return true;
