@@ -14,17 +14,17 @@ namespace Manager.Domain.Validators
         {
             RuleFor(x => x)
                .NotEmpty()
-               .WithMessage("The entity can not be empty.")
+               .WithMessage("The entity can't be empty.")
 
                .NotNull()
-               .WithMessage("The entity can not be null.");
+               .WithMessage("The entity can't be null.");
 
             RuleFor(x => x.Name)
                 .NotNull()
-                .WithMessage("The name can not be null.")
+                .WithMessage("The name can't be null.")
 
                 .NotEmpty()
-                .WithMessage("The name can not be empty.")
+                .WithMessage("The name can't be empty.")
 
                 .MinimumLength(3)
                 .WithMessage("The name must have a miminum of three characters.")
@@ -34,23 +34,23 @@ namespace Manager.Domain.Validators
 
             RuleFor(x => x.Password)
                 .NotNull()
-                .WithMessage("The password can not be null")
+                .WithMessage("The password can't be null.")
 
                 .NotEmpty()
-                .WithMessage("The password can not be empty")
+                .WithMessage("The password can't be empty.")
 
                 .MinimumLength(6)
-                .WithMessage("The password must have a minimum of six characters")
+                .WithMessage("The password must have a minimum of six characters.")
 
                 .MaximumLength(30)
-                .WithMessage("The password must have a maximum of thirty characters");
+                .WithMessage("The password must have a maximum of thirty characters.");
 
             RuleFor(x => x.Email)
                 .NotNull()
-                .WithMessage("The email can not be null")
+                .WithMessage("The email can't be null.")
 
                 .NotEmpty()
-                .WithMessage("The email can not be empty")
+                .WithMessage("The email can't be empty.")
 
                 .MinimumLength(10)
                 .WithMessage("The email must have a minimum of ten characters.")
@@ -59,7 +59,7 @@ namespace Manager.Domain.Validators
                 .WithMessage("The email must have a maximum of one hundred eigthy characters.")
 
                 .Matches(@"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$")
-                .WithMessage("The email is invalid");
+                .WithMessage("The email is invalid.");
 
         }
     }

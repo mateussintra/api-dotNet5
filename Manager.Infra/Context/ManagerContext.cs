@@ -19,11 +19,7 @@ namespace Manager.Infra.Context
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsbuilder)
-        {
-            optionsbuilder.UseSqlServer(@"Data Source=.\SQLEXPRESS;Initial Catalog=USERMANAGERAPI;Integrated Security=true;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        }
-
+     
         public virtual DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)

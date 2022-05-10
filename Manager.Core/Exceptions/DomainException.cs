@@ -9,15 +9,15 @@ namespace Manager.Core.Exceptions
     public class DomainException : Exception
     {
         internal List<string> _errors;
-        public IReadOnlyCollection<string> Erros => _errors;
+        public IReadOnlyCollection<string> Errors => _errors;
 
         public DomainException()
         {
         }
 
-        public DomainException(string message, List<string> erros) : base(message)
+        public DomainException(string message, List<string> errors) : base(message)
         {
-            _errors = erros;
+            _errors = errors;
         }
 
         public DomainException(string message) : base(message)
